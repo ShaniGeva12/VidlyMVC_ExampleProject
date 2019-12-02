@@ -1,0 +1,27 @@
+﻿@using VidlyMVC_ExampleProject.Models
+
+@model VidlyMVC_ExampleProject.ViewModels.MoviesViewModel
+
+@{
+    ViewBag.Title = "MoviesList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2 class=""> @Model.Movies.Count </h2>
+
+@if (Model.Movies.Count == 0)
+{
+    <p> There are no movies to show. </p>
+}
+else
+{
+    <ul>
+        @foreach (var movie in Model.Movies)
+        {
+            <li> @movie.Name </li>
+        }
+    </ul>
+}
+
+
